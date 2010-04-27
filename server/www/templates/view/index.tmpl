@@ -1,0 +1,28 @@
+#extends pervurs.server.www.templates.site
+#from pervurs.includes.urls import links
+#from pervurs.settings import QONVO_SITE_ID
+
+#block style
+$req.post.style
+#end block style
+
+#block body
+
+<div id="blog_post_container" class="blog_marked_$req.post.marker.lower.replace(' ', '_')">
+
+	<div id="blog_post"><div class="blog_title">
+	    <div class="blog_marker">$req.post.marker</div>
+		<div class="blog_time">$req.post.posted.strftime("%B %d, %Y")</div>
+		<div class="blog_byline"><b>by</b><span>$req.post.user.username</span></div>
+	    <h2>$req.post.title</h2>
+		<h3>$req.post.span</h3>
+	</div>
+	<div class="blog_body">$req.post.body</div></div>
+	
+	<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+	
+</div>
+
+<div id="blog_comments"><div id="qonvo_frame" site="$QONVO_SITE_ID" ident="$req.post.id"></div></div>
+
+#end block body

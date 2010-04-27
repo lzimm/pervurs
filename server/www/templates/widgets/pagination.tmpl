@@ -1,0 +1,19 @@
+#from pervurs.includes.urls import links
+
+<div class="pagination">
+#if $req.__dict__.get('pagination')
+
+#if $req.pagination.fetchcount(True)
+
+<a class="more" href="$links['paginate_more']($req)">More</a>
+
+#end if
+	
+#if $req.pagination.offset
+
+<a class="less" href="$links['paginate_less']($req)">Less</a>
+
+#end if
+
+#end if
+</div>

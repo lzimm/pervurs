@@ -1,0 +1,38 @@
+#extends pervurs.server.www.templates.site
+
+#block body
+
+<div class="form">
+<form action="$req.uri" method="POST">
+    <div class="row textfields">
+        <div class="column">
+            <label for="username">Username</label>
+            <input name="username" type="text" />
+        </div>
+
+        <div class="column">
+            <label for="email">Email</label>
+            <input name="email" type="text" />
+        </div>
+    </div>
+    
+    <div class="row textfields">
+        <div class="column">
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+        </div>
+        
+        <div class="column">
+            <label for="confirm_password">Confirm Password</label>
+            <input name="confirm_password" type="password" />
+        </div>
+    </div>
+    
+    <div class="row"><div class="column">
+    <input type="submit" />
+    </div></div>
+    
+</form>
+</div>
+
+#end block body

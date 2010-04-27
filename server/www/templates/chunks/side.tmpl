@@ -1,0 +1,26 @@
+#from pervurs.includes.urls import links
+
+<div id="pervurs_side_label">
+  <b></b><b></b><b></b><span>Featured</span>
+  <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>
+
+<div class="posts">
+
+#for $post in $req.settings.ref.get_featured_posts()
+
+    <div class="post">
+        <div class="post_image">
+            <a href="$links['post']($post)"><img src="$links['attachment_hot']($post)"></a>
+            <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+        </div>
+        <div class="post_title">
+            <span class="marker">$post.marker</span>
+            <h2><a href="$links['post']($post)">$post.title</a></h2>
+        </div>
+    </div>
+
+#end for
+
+    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>

@@ -1,0 +1,36 @@
+#extends pervurs.server.www.templates.admin.base
+#from pervurs.includes.urls import links
+
+#block scripts
+
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+window.onload = function()
+{
+var oFCKeditor = new FCKeditor( 'body' ) ;
+oFCKeditor.BasePath = "/fckeditor/";
+oFCKeditor.ReplaceTextarea();
+}
+</script>
+
+#end block script
+
+#block body
+
+<div id="blog_editor">
+    <form action="$req.uri" method="POST" enctype="multipart/form-data">
+	<div class="blog_post">
+		<div class="blog_marker"><input type="text" name="marker" value="$req.args.marker[0]" /></div>
+		<div class="blog_classes"><input type="text" name="classes" value="$req.args.classes[0]" /></div>
+		<div class="blog_title"><input type="text" name="title" value="$req.args.title[0]" /></div>
+		<div class="blog_span"><textarea name="span">$req.args.span[0]</textarea></div>
+		<div class="blog_body"><textarea name="body">$req.args.body[0]</textarea></div>
+		<div class="blog_style"><textarea name="style">$req.args.style[0]</textarea></div>
+		<div class="blog_attachment"><input type="file" name="attachment"></div>
+	</div>
+
+    <div class="blog_options"><input type="submit" /></div>
+    </form>
+</div>
+
+#end block body

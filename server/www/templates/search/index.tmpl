@@ -1,0 +1,35 @@
+#extends pervurs.server.www.templates.site
+#from pervurs.includes.urls import links
+
+#block body
+
+<div id="blog_posts_container">
+	<div id="blog_posts">
+
+	<h1><b></b><b></b><b></b><span>Search Results</span></h1>
+
+#for $post in $req.posts
+
+	<div class="blog_post" class="$post.marker">
+        <div class="blog_snapshot">
+    	    <div class="blog_image"><img src="$links['attachment_index']($post)"></div>
+    	    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+	    </div>
+		<div class="blog_title">
+		    <div class="blog_marker">$post.marker</div>
+			<div class="blog_time">$post.posted.strftime("%B %d, %Y")</div>
+		    <h2><a href="$links['post']($post)">$post.matched_title</a></h2>
+		    <div class="blog_byline">$post.user.username</div>
+		</div>
+		<div class="blog_preview">$post.matched_body</div>
+	</div>
+
+#end for
+
+#include "../server/www/templates/widgets/pagination.tmpl"
+
+	</div>
+	<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>
+
+#end block body

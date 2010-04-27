@@ -1,0 +1,89 @@
+@import url("reset.css");
+
+html, body { height: 100%; margin: 0; padding: 0; }
+body { background-color: #fff; font-family: georgia,"times new roman",times,serif; font-size: 62.6%; line-height: 1.5em; color: #333; text-align: center; }
+a { color: #10100f; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+#pervurs_container { position: relative; width: 100%; height: 100%; }
+
+#pervurs_top { z-index: 9999; position: fixed; top: 0; left: 0; width: 100%; }
+#pervurs_top_wrap { }
+#pervurs_top_hat { background: transparent url(/img/layout/top_hat_bg.png) scroll -700px top repeat-x; height: 2px; line-height: 1px; font-size: 1px; padding: 0; }
+#pervurs_top_foot { background: transparent url(/img/layout/top_hat_bg.png) scroll -700px top repeat-x; height: 1px; line-height: 1px; font-size: 1px; padding: 0; display: none; }
+#pervurs_top_shadow { height: 7px; line-height: 1px; font-size: 1px; padding: 0; width: 100%; 
+    background: transparent url(/img/layout/top_shadow.png) bottom left repeat-x; }
+#pervurs_top_container { background-color: #fff; }
+#pervurs_top_body { height: 36px; overflow: hidden; text-align: right; margin: 0 auto; width: 900px; border-left: 1px solid #eee; border-right: 1px solid #eee; }
+
+#pervurs_top_logo { background: transparent url(/img/layout/top_logo.png) top left no-repeat; width: 100px; height: 7px; margin: 14px 30px; float: left; }
+#pervurs_top_buttons { float: right; display: block; height: 36px; }
+#pervurs_top_buttons a { display: block; float: left; height: 36px; overflow: hidden; padding: 0px; width: 50px; 
+    background: #ccc; border-right: 1px solid #ddd; border-left: 1px solid #bbb; }
+#pervurs_top_buttons a:hover { background-color: #999; border-right: 1px solid #999; }
+#pervurs_top_buttons a span { display: none; }
+#pervurs_top_buttons a span.img { display: block; float: left; height: 17px; margin-top: 10px; margin-left: 18px; cursor: pointer; }
+
+a#pervurs_top_post span.img { background: transparent url(/img/layout/top_icn_post.png) top left no-repeat; width: 17px; }
+a#pervurs_top_social span.img { background: transparent url(/img/layout/top_icn_social.png) top left no-repeat; width: 16px; }
+
+* html { overflow: hidden; }
+* html #pervurs_top { position: absolute; }
+* html #pervurs_top_wrap.scrollbars { margin-right: 17px; }
+* html #pervurs_top_buttons a span.img { margin-left: 9px; background: none; }
+* html a#pervurs_top_post span.img { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/layout/top_icn_post.png', sizingMethod='crop'); }
+* html a#pervurs_top_social span.img { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/layout/top_icn_social.png', sizingMethod='crop'); }
+* html #pervurs_top_shadow { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/layout/top_shadow.png', sizingMethod='scale'); }
+* html #pervurs_top_logo { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/layout/top_logo.png', sizingMethod='crop'); 
+    margin-left: 15px; }
+    
+#pervurs_top_search { float: right; display: block; background: #eee; border-left: 1px solid #ccc; height: 36px; }
+#pervurs_top_search input { padding: 2px; border: 1px solid #999; background-color: #fcfcfc; margin: 7px 10px; 
+    font-size: 1.1em; line-height: 11px; height: 15px; color: #333; }
+
+#pervurs_wrapper { }
+* html #pervurs_wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; }
+
+#pervurs_capping { margin: 38px auto 0; auto; padding: 18px 0 5px 0; background: #eee url(/img/layout/top_hat_bg.png) scroll -350px; border: 1px solid #eee; width: 900px; text-align: left; }
+#pervurs_frame { border: 1px solid #fff; border-left: none; border-right: none; background: #fcfcfc; }
+
+#pervurs_title { margin: -15px 300px -5px 10px; padding: 50px 20px; background-color: #fff; border: 1px solid #eee; border-bottom: none; }
+#pervurs_title h1 { font-size: 2em; font-weight: normal; color: #999; margin: 0; padding: 0; height: 2em; line-height: 2em; }
+
+#pervurs_side { float: right; width: 285px; background-color: #fff; border: 5px solid #f6f6f6; border-left: none; margin-top: -95px; margin-right: 10px; }
+
+#pervurs_body { margin: 0px 300px 10px 10px; background: #fff; border: 1px solid #eee; border-top: none; }
+
+#pervurs_footer { margin: 0 auto; width: 840px; font-size: 1em; color: #999; padding: 10px 0 20px 0; text-align: left; }
+
+#blog_posts { }
+#blog_posts div.blog_post { margin: 5px 20px; padding: 10px 0; border-bottom: 1px solid #eee; }
+#blog_posts div.blog_post div.blog_title { padding: 10px 0; font-family: Arial, Helvetica, sans-serif; }
+#blog_posts div.blog_post div.blog_title div.blog_time { padding: 3px 0; font-size: 1em; line-height: 1.2em; color: #666; }
+#blog_posts div.blog_post div.blog_title div.blog_byline { padding: 5px 0; font-size: 1.2em; line-height: 1.2em; color: #999; }
+#blog_posts div.blog_post div.blog_body { padding: 10px 0; margin-bottom: 10px; font-size: 1.3em; line-height: 1.6em; }
+
+#blog_posts div.blog_post div.blog_title div.blog_post_options { float: right; }
+#blog_posts div.blog_post div.blog_title div.blog_post_options a { float: right; padding: 5px 5px 0 5px; display: block; }
+
+#blog_hot { display: block; }
+#blog_hot div.blog_hot_post { display: block; padding: 10px 30px; border-bottom: 1px dotted #eee; }
+#blog_hot div.blog_hot_post div.blog_hot_title { font-family: Arial, Helvetica, sans-serif; }
+#blog_hot div.blog_hot_post div.blog_hot_title h2 { font-size: 1.1em; line-height: 1.1em; height: 1.1em; }
+
+#blog_admin_options { margin: 5px 200px 5px 0px; border: 1px solid #ddd; padding: 10px 30px; }
+
+#blog_editor { }
+#blog_editor div.blog_post { margin: 5px 0; background: #f6f6f6; }
+#blog_editor div.blog_post div.blog_title { border: 1px solid #ddd; padding: 10px 20px; }
+#blog_editor div.blog_post div.blog_title input { padding: 5px; font-size: 2em; line-height: 2.25em; height: 2.25em; border: 1px solid #ddd; background: #fff; margin: 0; width: 95%; }
+#blog_editor div.blog_post div.blog_body { padding: 20px; border: 1px solid #ddd; border-top: none; margin-bottom: 10px; }
+#blog_editor div.blog_post div.blog_body textarea { width: 100%; height: 100px; border: 1px solid #ddd; background: #fff; }
+
+div.form { margin-right: 200px; }
+div.form div.column { float: left; display: block; padding: 10px; }
+div.form div.row { display: block; clear: left; }
+div.form label { display: block; padding: 3px; color: #666; }
+div.form input { font-size: 1.2em; }
+div.form div.textfields input,
+div.form input.textfield { background-color: #fff; border: 2px solid #eee; padding: 3px; width: 265px; }

@@ -1,0 +1,159 @@
+#from pervurs.includes.urls import links
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>$req.settings.ref.name</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="$req.settings.hostpaths['stylesheet']" rel="stylesheet" type="text/css" />
+#block scripts
+#end block scripts
+<style>
+#block style
+#end block style
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="wrapper"><div id="body">
+    
+<div id="pervurs_top">
+
+<div id="pervurs_top_about">
+the connectedism salon is an open forum built to facilitate discussion among the curious.
+</div>
+
+<div id="pervurs_top_header">
+	<h1>$req.settings.ref.name</h1>
+	<div id="pervurs_top_aux">
+		<p><b></b><b></b><b></b><span>Thoughts Connected</span></p>
+		<p><b></b><b></b><b></b><span><a href="$links['feed']($req.settings.ref)">Subscribe</a></span></p>
+	</div>
+</div>
+
+#block top
+#include "../server/www/templates/chunks/top.tmpl"
+#end block top
+
+</div>
+
+<div id="pervurs_side">
+
+#block side
+#include "../server/www/templates/chunks/side.tmpl"
+#end block side
+
+</div>
+
+<div id="pervurs_body">
+#block body
+#end block body
+</div>
+
+<div id="pervurs_footer">
+&copy;2009 Qorporation Inc.
+</div>
+</div></div>
+
+<div id="top">
+	<div id="top_wrap">
+	<div id="top_container">
+	<div id="top_stripe"><div id="top_stripe_strip"></div></div>
+
+	<div id="top_pod_drop">
+		<div id="top_pod_drop_cap_top"><div id="top_pod_drop_cap"></div></div>
+		<div id="top_pod_drop_wrap"><div id="top_pod_drop_body" onmouseover="podFocus();" onmouseout="podBlur();">
+			<div id="top_pod_drop_network"></div>
+			<div id="top_pod_drop_post">
+				<h3>Your Recent Comments <a href="javascript:qonvo.logout();" class="logout">(Logout)</a></h3>
+				<div class='top_pod_drop_login'>
+				
+                <label class='top_pod_drop_username'><span>Name</span><input type='text' /></label>
+                <label class='top_pod_drop_email'><span>Email</span><input type='text' /></label>
+                <label class='top_pod_drop_website'><span>Website</span><input type='text' /></label>
+                <label class='top_pod_drop_password'><span>Password</span><input type='password' /></label>
+                <label class='top_pod_drop_password_confirm'><span>Password*</span><input type='password' /></label>
+
+				<div class='top_pod_drop_login_type'>
+				<label onclick='podSetLoginType("login", "post")'><input type='radio' name='auth_post' value='login' />Login</label>
+                <label onclick='podSetLoginType("register", "post")'><input type='radio' name='auth_post' value='register' />Register</label>
+				</div>
+
+                <input type='submit' value='Submit' onclick='podLogin("post")' class='submit' />
+				
+				</div>
+				<div class='top_pod_drop_content'></div>
+			</div>
+			<div id="top_pod_drop_social">
+				<h3>Your Recent Responders <a href="javascript:qonvo.logout();" class="logout">(Logout)</a></h3>
+				<div class='top_pod_drop_login'>
+				
+                <label class='top_pod_drop_username'><span>Name</span><input type='text' /></label>
+                <label class='top_pod_drop_email'><span>Email</span><input type='text' /></label>
+                <label class='top_pod_drop_website'><span>Website</span><input type='text' /></label>
+                <label class='top_pod_drop_password'><span>Password</span><input type='password' /></label>
+                <label class='top_pod_drop_password_confirm'><span>Password*</span><input type='password' /></label>
+
+				<div class='top_pod_drop_login_type'>
+				<label onclick='podSetLoginType("login", "social")'><input type='radio' name='auth_social' value='login' />Login</label>
+                <label onclick='podSetLoginType("register", "social")'><input type='radio' name='auth_social' value='register' />Register</label>
+				</div>
+
+                <input type='submit' value='Submit' onclick='podLogin("social")' class='submit' />
+				
+				</div>
+				<div class='top_pod_drop_content'></div>
+			</div>
+		</div></div>
+		<div id="top_pod_drop_cap_bot"><div id="top_pod_drop_cap"></div></div>
+	</div>
+	
+	<div id="top_search_drop">
+		<div id="top_search_drop_cap_top"><div id="top_search_drop_cap"></div></div>
+		<div id="top_search_drop_wrap"><div id="top_search_drop_body" onmouseover="searchDropFocus();" onmouseout="searchDropBlur();">
+			<div id="top_search_drop_content"></div>
+		</div></div>
+		<div id="top_search_drop_cap_bot"><div id="top_search_drop_cap"></div></div>
+	</div>
+
+	<div id="top_pod"><div id="top_pod_body">
+	    <a href="#" id="top_logo_body" onmouseover="podDrop('network');" onmouseout="podClear();"><span id="top_logo"></span></a>
+		<div id="top_search" onmouseout="searchDropBlur()">
+			<form method="get" action="/search">
+	    		<input type="text" id="top_search_q" value="search..." name="q" onfocus="this.value = this.value == 'search...' ? '' : this.value;" onkeydown="autoComplete(this.value);" onblur="searchDropClear()" />
+			</form>
+	    </div>
+		<div id="top_buttons">
+	    	<a href="#" onmouseover="podDrop('post');" onmouseout="podClear();" id="top_post"><span class="img"></span><span>Post</span></a>
+	        <a href="#" onmouseover="podDrop('social');" onmouseout="podClear();" id="top_social"><span class="img"></span><span>Socialize</span></a>
+	    </div>
+	</div></div>
+	
+	</div>
+	</div>
+</div>
+
+</div>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/pervurs.js"></script>
+<script type="text/javascript" src="http://www.qonvo.com/js/qonvo.js"></script>
+<script type="text/javascript">
+#raw
+	function checkScrollbars() {
+	    if ($('#wrapper').height() < $('#body').height()) {
+			$('#top_wrap').addClass('scrollbars');
+		} else {
+			$('#top_wrap').removeClass('scrollbars');
+		}
+	}
+	$(window).bind('resize', checkScrollbars);
+	$(document).ready(checkScrollbars);
+#end raw
+</script>
+
+</body>
+</html>

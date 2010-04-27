@@ -1,0 +1,40 @@
+#extends pervurs.server.www.templates.admin.base
+#from pervurs.includes.urls import links
+
+#block body
+
+<div id="blog_posts_container">
+	<div id="blog_posts">
+
+	<h1><b></b><b></b><b></b><span>Admin</span></h1>
+
+#set $posts = $req.settings.ref.posts.filter(order_by="posted")
+#set $post = $posts.fetchone()
+#while $post
+
+	<div class="blog_post" class="$post.marker">
+        <div class="blog_snapshot">
+    	    <div class="blog_image"><img src="$links['attachment_index']($post)"></div>
+    	    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+	    </div>
+		<div class="blog_title">
+		    <div class="blog_marker">$post.marker</div>
+			<div class="blog_time">$post.posted.strftime("%B %d, %Y")</div>
+		    <h2><a href="$links['post_edit']($post)">$post.title</a></h2>
+		    <div class="blog_byline">$post.user.username</div>
+		</div>
+		<div class="blog_preview">$post.span</div>
+	</div>
+
+#set $post = $posts.fetchone()
+#end while
+
+	</div>
+	<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>
+
+<div id="blog_admin_options">
+    <a href="$links['post_new']()">New Post</a>
+</div>
+
+#end block body

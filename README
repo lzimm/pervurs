@@ -1,0 +1,25 @@
+-- this is fairly old school work yo --
+
+way back when, i figured it'd be a cool idea to write a blog platform
+that only hosted post content and offset commenting to another app.
+
+the blog platform would let you do a bunch of fancy ass stuff to super
+stylify each post and all that, and since the commenting platform
+(which is where most of the writes for such an app would happen) was
+separate (ala disqus n' shit), you could cache the crap out of everything
+on the actual blog, and if you somehow got swamped with traffic, comments
+would go down (but who cares, cuz you could just scale that crap orthagonally)
+without disrupting your ego.
+
+i'll probably post the commenting thing eventually too. it was basically a
+several version precursor to http://360.io (ie: real-time bullshit that lets
+you own the style of your comments: there's a lot of weird philosophical that i
+cooked up behind all this btw)
+
+anyways, standard disclaimer:
+
+there's a bunch of extra junk in here you probably don't need to run it,
+while on the other hand, its probably missing some stuff you do
+(as well as any explanation of how all this junk works,
+license information that i probably stripped from a bunch of files
+and any sort of sanity). so funny.

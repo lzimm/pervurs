@@ -1,0 +1,2 @@
+HotCache = dict()
+HotRank = dict()

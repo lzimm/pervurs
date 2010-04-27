@@ -1,0 +1,64 @@
+#extends pervurs.server.www.templates.site
+#from pervurs.includes.urls import links
+
+#block top
+
+<div id="pervurs_top_label" class="front">
+    <b></b><b></b><b></b><span>Hot</span>
+    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>
+
+<div class="posts posts_front">
+
+#set $index = 1
+#for $post in $req.settings.ref.get_hot_posts()
+
+    <div class="post post_$index">
+        <div class="post_image">
+          <a href="$links['post']($post)"><img src="$links['attachment_featured']($post)"></a>
+          <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+        </div>
+        <div class="post_title"><h2><span class="marker">$post.marker</span><a href="$links['post']($post)">$post.title</a></h2></div>
+    </div>
+
+#set $index = $index + 1
+#end for
+
+    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+	<div class="clear"></div>
+</div>
+
+#end block top
+
+#block body
+
+<div id="blog_posts_container" class="front">
+	<div id="blog_posts">
+
+	<h1><b></b><b></b><b></b><span>Recent</span></h1>
+
+#for $post in $req.posts
+
+	<div class="blog_post" class="$post.marker">
+        <div class="blog_snapshot">
+    	    <div class="blog_image"><img src="$links['attachment_index']($post)"></div>
+    	    <div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+	    </div>
+		<div class="blog_title">
+		    <div class="blog_marker">$post.marker</div>
+			<div class="blog_time">$post.posted.strftime("%B %d, %Y")</div>
+		    <h2><a href="$links['post']($post)">$post.title</a></h2>
+		    <div class="blog_byline">$post.user.username</div>
+		</div>
+		<div class="blog_preview">$post.span</div>
+	</div>
+
+#end for
+
+#include "../server/www/templates/widgets/pagination.tmpl"
+
+	</div>
+	<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>
+</div>
+
+#end block body
